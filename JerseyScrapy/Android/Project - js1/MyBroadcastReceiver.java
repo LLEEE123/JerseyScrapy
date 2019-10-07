@@ -12,7 +12,7 @@ public class MyBroadcastReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         if(intent.getAction().equals("Hello")){
-            Log.v("brad", "-----------+++++++++++++++++++tbroadcast");
+            Log.v("brad", "tbroadcast");
         }
     }
 }

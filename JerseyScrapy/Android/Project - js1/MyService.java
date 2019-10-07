@@ -132,35 +132,7 @@ public class MyService extends Service {
         super.onDestroy();
 
     }
-    //////////////////////////////////////////////////////////////////////////////
-
-    //    public void XXX(){
-//        int i=11;
-//
-//        while (i<200){
-//            try {
-//                /////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//                //System.out.println(i);
-//                i++;
-//
-//                Intent it = new Intent("Hello");
-//                String s = Integer.toString(i);
-//                it.putExtra("loopvalue",s);
-//                System.out.println("s="+s);
-//                Log.v("brad","sendbroadcast");
-//                it.setAction("1232");
-//                //it.setAction("Hello");
-//                //it.setComponent(new ComponentName("com.example.js1","com.example.js1.MyBroadcastReceiver"));
-//                sendBroadcast(it);
-//
-//                Thread.sleep(1000);
-//                /////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//            }catch (Exception ioe) {
-//                ioe.printStackTrace();
-//            }
-//        }
-//    }
-
+    
     /////////////////////////////////////////////////////////////////////////////
 
     Thread Longtermtask =new Thread(new Runnable(){ //耗時thread
@@ -382,17 +354,14 @@ public class MyService extends Service {
 
                 //將新商品名單置入至舊商品名單中
                 outitemarrayP1 = initemarrayP1;
-                System.out.println("111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111====");
+                
 
                 for(int kkk=0;kkk<outitemarrayP1.length();kkk++){
                     JSONObject obj = outitemarrayP1.getJSONObject(kkk);
                     long tempid = obj.getLong("itemid");
                     System.out.println(tempid);
                 }
-                System.out.println("111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111====");
-
-
-//                System.out.println("111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111====");
+                
                 statusbroadcast("新資料轉為舊資料");
 
                 for(int k=0;k<50;k++){///////////////一輪完後 發出通知隨後清空nuitarray
